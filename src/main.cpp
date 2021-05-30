@@ -11,7 +11,10 @@
 // Robot Configuration:
 // [Name]               [Type]        [Port(s)]
 // Controller1          controller                    
-// Motor1               motor         1               
+// LBM                  motor         1               
+// LFM                  motor         2               
+// RBM                  motor         3               
+// RFM                  motor         4               
 // ---- END VEXCODE CONFIGURED DEVICES ----
 
 #include "vex.h"
@@ -70,6 +73,15 @@ void autonomous(void) {
 void usercontrol(void) {
   // User control code here, inside the loop
   while (1) {
+
+    float pwr = Controller1.Axis3.position(percent);
+    float speen = Controller1.Axis1.position(percent);
+    float side = Controller1.Axis4.position(percent);
+
+    LBM.spin(forward, pwr + speen - side, pct);
+    LFM.spin(forward, pwr + speen + side, pct);
+    RBM.spin(forward, pwr - speen + side, pct);
+    RFM.spin(forward, pwr - speen - side, pct);
 
     wait(20, msec); // Sleep the task for a short amount of time to
                     // prevent wasted resources.
