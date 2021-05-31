@@ -8,6 +8,11 @@ extern motor LBM;
 extern motor LFM;
 extern motor RBM;
 extern motor RFM;
+extern encoder LeftY;
+extern encoder RightY;
+extern encoder X;
+extern motor DR4B;
+extern motor Flip;
 
 /**
  * Used to initialize code/tasks/devices added using tools in VEXcode Pro.
