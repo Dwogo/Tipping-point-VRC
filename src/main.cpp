@@ -11,10 +11,9 @@
 // Robot Configuration:
 // [Name]               [Type]        [Port(s)]
 // Controller1          controller                    
-// LBM                  motor         1               
-// LFM                  motor         2               
-// RBM                  motor         3               
-// RFM                  motor         4               
+// LFM                  motor         1               
+// RFM                  motor         2               
+// Back                 motor         3               
 // LeftY                encoder       A, B            
 // RightY               encoder       C, D            
 // X                    encoder       E, F            
@@ -28,9 +27,9 @@ using namespace vex;
 
 // A global instance of competition
 competition Competition;
-bool userControl = false;
 
 // define your global instances of motors and other devices here
+bool userControl = false;
 
 /*---------------------------------------------------------------------------*/
 /*                          Pre-Autonomous Functions                         */
@@ -118,10 +117,9 @@ int pird() {
         float electron = (terror * tkP) + (tPrevError * tkI) + (teriv * tkD);
  
       // Motor Asignment   
-        LBM.spin(forward, proton - neutron + electron, rpm);
-        LFM.spin(forward, proton + neutron + electron, rpm);
-        RBM.spin(forward, proton + neutron - electron, rpm);
-        RFM.spin(forward, proton - neutron - electron, rpm);
+        LFM.spin(forward, proton + electron + neutron, pct);
+      RFM.spin(forward, proton - electron + neutron, pct);
+      Back.spin(forward, electron + neutron, pct);
 
         wait(10,msec);
     }
@@ -158,10 +156,9 @@ void usercontrol(void) {
       float speen = Controller1.Axis1.position(percent);
       float side = Controller1.Axis4.position(percent);
     // Motor Asignment
-      LBM.spin(forward, pwr + speen - side, pct);
       LFM.spin(forward, pwr + speen + side, pct);
-      RBM.spin(forward, pwr - speen + side, pct);
-      RFM.spin(forward, pwr - speen - side, pct);
+      RFM.spin(forward, pwr - speen + side, pct);
+      Back.spin(forward, speen + side, pct);
 
   // Special Sauce
     // DR4B
