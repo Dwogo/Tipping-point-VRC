@@ -6,12 +6,13 @@ extern brain Brain;
 extern controller Controller1;
 extern motor LFM;
 extern motor RFM;
-extern motor Back;
+extern motor RBM;
 extern encoder LeftY;
 extern encoder RightY;
 extern encoder X;
 extern motor DR4B;
 extern motor Flip;
+extern motor LBM;
 
 /**
  * Used to initialize code/tasks/devices added using tools in VEXcode Pro.

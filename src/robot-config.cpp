@@ -11,12 +11,13 @@ brain  Brain;
 controller Controller1 = controller(primary);
 motor LFM = motor(PORT1, ratio18_1, false);
 motor RFM = motor(PORT2, ratio18_1, true);
-motor Back = motor(PORT3, ratio18_1, true);
+motor RBM = motor(PORT3, ratio18_1, true);
 encoder LeftY = encoder(Brain.ThreeWirePort.A);
-encoder RightY = encoder(Brain.ThreeWirePort.C);
+encoder RightY = encoder(Brain.ThreeWirePort.G);
 encoder X = encoder(Brain.ThreeWirePort.E);
 motor DR4B = motor(PORT5, ratio18_1, false);
 motor Flip = motor(PORT6, ratio18_1, false);
+motor LBM = motor(PORT4, ratio18_1, false);
 
 // VEXcode generated functions
 // define variable for remote controller enable/disable

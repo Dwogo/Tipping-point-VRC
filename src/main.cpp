@@ -13,12 +13,13 @@
 // Controller1          controller                    
 // LFM                  motor         1               
 // RFM                  motor         2               
-// Back                 motor         3               
+// RBM                  motor         3               
 // LeftY                encoder       A, B            
-// RightY               encoder       C, D            
+// RightY               encoder       G, H            
 // X                    encoder       E, F            
 // DR4B                 motor         5               
 // Flip                 motor         6               
+// LBM                  motor         4               
 // ---- END VEXCODE CONFIGURED DEVICES ----
 
 #include "vex.h"
@@ -118,8 +119,9 @@ int pird() {
  
       // Motor Asignment   
         LFM.spin(forward, proton + electron + neutron, pct);
-      RFM.spin(forward, proton - electron + neutron, pct);
-      Back.spin(forward, electron + neutron, pct);
+        LBM.spin(forward, proton + electron - neutron, pct);
+        RBM.spin(forward, proton - electron + neutron, pct);
+        RFM.spin(forward, proton - electron - neutron, pct);
 
         wait(10,msec);
     }
@@ -157,8 +159,9 @@ void usercontrol(void) {
       float side = Controller1.Axis4.position(percent);
     // Motor Asignment
       LFM.spin(forward, pwr + speen + side, pct);
-      RFM.spin(forward, pwr - speen + side, pct);
-      Back.spin(forward, speen + side, pct);
+      RFM.spin(forward, pwr - speen - side, pct);
+      RBM.spin(forward, pwr - speen + side, pct);
+      LBM.spin(forward, pwr + speen - side, pct );
 
   // Special Sauce
     // DR4B
