@@ -159,9 +159,9 @@ void usercontrol(void) {
       float side = Controller1.Axis4.position(percent);
     // Motor Asignment
       LFM.spin(forward, pwr + speen + side, pct);
+      LBM.spin(forward, pwr + speen - side, pct);
       RFM.spin(forward, pwr - speen - side, pct);
       RBM.spin(forward, pwr - speen + side, pct);
-      LBM.spin(forward, pwr + speen - side, pct );
 
   // Special Sauce
     // DR4B
