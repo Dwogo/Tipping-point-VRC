@@ -10,9 +10,9 @@ extern motor RBM;
 extern encoder LeftY;
 extern encoder RightY;
 extern encoder X;
-extern motor DR4B;
 extern motor Flip;
 extern motor LBM;
+extern motor_group DR4B;
 
 /**
  * Used to initialize code/tasks/devices added using tools in VEXcode Pro.

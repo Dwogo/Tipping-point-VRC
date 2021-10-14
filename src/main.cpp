@@ -17,9 +17,9 @@
 // LeftY                encoder       A, B            
 // RightY               encoder       G, H            
 // X                    encoder       E, F            
-// DR4B                 motor         5               
 // Flip                 motor         6               
 // LBM                  motor         4               
+// DR4B                 motor_group   5, 7            
 // ---- END VEXCODE CONFIGURED DEVICES ----
 
 #include "vex.h"
@@ -166,15 +166,11 @@ void usercontrol(void) {
   // Special Sauce
     // DR4B
       if (Controller1.ButtonR2.pressing()) {
-        DR4B.spin(forward, 50, pct);
+        DR4B.spin(forward, 100, pct);
       } else if (Controller1.ButtonR1.pressing()) {
-        DR4B.spin(reverse, 50, pct);
-      }
-    // Flipper
-      if (Controller1.ButtonL1.pressing()) {
-        Flip.spin(forward, 50, pct);
-      } else if (Controller1.ButtonL2.pressing()) {
-        Flip.spin(reverse, 50, pct);
+        DR4B.spin(reverse, 100, pct);
+      } else {
+        DR4B.stop();
       }
 
     wait(20, msec); // Sleep the task for a short amount of time to
