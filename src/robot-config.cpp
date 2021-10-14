@@ -15,7 +15,6 @@ motor RBM = motor(PORT3, ratio18_1, true);
 encoder LeftY = encoder(Brain.ThreeWirePort.A);
 encoder RightY = encoder(Brain.ThreeWirePort.G);
 encoder X = encoder(Brain.ThreeWirePort.E);
-motor Flip = motor(PORT6, ratio18_1, false);
 motor LBM = motor(PORT4, ratio18_1, false);
 motor DR4BMotorA = motor(PORT5, ratio36_1, false);
 motor DR4BMotorB = motor(PORT7, ratio36_1, true);

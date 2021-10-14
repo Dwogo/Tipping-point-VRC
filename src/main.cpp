@@ -17,7 +17,6 @@
 // LeftY                encoder       A, B            
 // RightY               encoder       G, H            
 // X                    encoder       E, F            
-// Flip                 motor         6               
 // LBM                  motor         4               
 // DR4B                 motor_group   5, 7            
 // ---- END VEXCODE CONFIGURED DEVICES ----

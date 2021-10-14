@@ -10,7 +10,6 @@ extern motor RBM;
 extern encoder LeftY;
 extern encoder RightY;
 extern encoder X;
-extern motor Flip;
 extern motor LBM;
 extern motor_group DR4B;
 
