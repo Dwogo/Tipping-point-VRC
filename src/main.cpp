@@ -138,31 +138,42 @@ int resetPos() {
 
 
 void autonomous(void) {
-  vex::task drivePID(pird);
-  // ..........................................................................
-  // Insert autonomous user code here.
-  // ..........................................................................
+  // Starting the engines
+    vex::task drivePID(pird);
+    vex::task drivePID(resetPos);
+  // Autonomous commands
+  
+
+
+
+
 }
 
-/*---------------------------------------------------------------------------*/
-/*                                                                           */
-/*                              User Control Task                            */
-/*                                                                           */
-/*  This task is used to control your robot during the user control phase of */
-/*  a VEX Competition.                                                       */
-/*                                                                           */
-/*  You must modify the code to add your own robot specific commands here.   */
-/*---------------------------------------------------------------------------*/
+bool cancel = false;
 
-
-
+int rueben() {
+  Controller1.Screen.print("3.....");
+  wait(1,sec);
+  Controller1.Screen.print("2.....");
+  wait(1,sec);
+  Controller1.Screen.print("1.....");
+  wait(1,sec);
+  if (!cancel) {
+  Controller1.Screen.print("Bye Bye");
+  userControl = false;
+  } else {
+  Controller1.Screen.print("No worries")
+  }
+  wait(5,sec);
+  userControl = true
+}
 
 
 
 void usercontrol(void) {
   // User control code here, inside the loop
   userControl = true;
-  while (1) {
+  while (userControl) {
 
   // Driving
     // User Motor inputs
@@ -184,6 +195,14 @@ void usercontrol(void) {
       } else {
         DR4B.stop();
       }
+
+  // Rueben's here
+    // Time to fix that
+      if (Dummy.pressing()) {
+      cancel = false;
+      vex::task stoopid(rueben);
+      }
+      if (Controller1.ButtonX.pressing()) cancel = true;
 
     wait(20, msec); // Sleep the task for a short amount of time to
                     // prevent wasted resources.
