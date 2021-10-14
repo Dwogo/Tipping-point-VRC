@@ -12,6 +12,7 @@ extern encoder RightY;
 extern encoder X;
 extern motor LBM;
 extern motor_group DR4B;
+extern bumper Dummy;
 
 /**
  * Used to initialize code/tasks/devices added using tools in VEXcode Pro.

@@ -19,6 +19,7 @@ motor LBM = motor(PORT4, ratio18_1, false);
 motor DR4BMotorA = motor(PORT5, ratio36_1, false);
 motor DR4BMotorB = motor(PORT7, ratio36_1, true);
 motor_group DR4B = motor_group(DR4BMotorA, DR4BMotorB);
+bumper Dummy = bumper(Brain.ThreeWirePort.D);
 
 // VEXcode generated functions
 // define variable for remote controller enable/disable

@@ -19,6 +19,7 @@
 // X                    encoder       E, F            
 // LBM                  motor         4               
 // DR4B                 motor_group   5, 7            
+// Dummy                bumper        D               
 // ---- END VEXCODE CONFIGURED DEVICES ----
 
 #include "vex.h"
@@ -129,6 +130,13 @@ int pird() {
   return 1;
 }
 
+int resetPos() {
+  LeftY.resetRotation();
+  RightY.resetRotation();
+  X.resetRotation();
+}
+
+
 void autonomous(void) {
   vex::task drivePID(pird);
   // ..........................................................................
@@ -145,6 +153,11 @@ void autonomous(void) {
 /*                                                                           */
 /*  You must modify the code to add your own robot specific commands here.   */
 /*---------------------------------------------------------------------------*/
+
+
+
+
+
 
 void usercontrol(void) {
   // User control code here, inside the loop
@@ -164,9 +177,9 @@ void usercontrol(void) {
 
   // Special Sauce
     // DR4B
-      if (Controller1.ButtonR2.pressing()) {
+      if (Controller1.ButtonR1.pressing()) {
         DR4B.spin(forward, 100, pct);
-      } else if (Controller1.ButtonR1.pressing()) {
+      } else if (Controller1.ButtonR2.pressing()) {
         DR4B.spin(reverse, 100, pct);
       } else {
         DR4B.stop();
