@@ -142,7 +142,7 @@ void autonomous(void) {
     vex::task drivePID(pird);
     vex::task drivePID(resetPos);
   // Autonomous commands
-  
+
 
 
 
@@ -167,8 +167,6 @@ int rueben() {
   wait(5,sec);
   userControl = true
 }
-
-
 
 void usercontrol(void) {
   // User control code here, inside the loop
