@@ -11,14 +11,14 @@
 // Robot Configuration:
 // [Name]               [Type]        [Port(s)]
 // Controller1          controller                    
-// LFM                  motor         1               
-// RFM                  motor         2               
-// RBM                  motor         3               
+// LFM                  motor         8               
+// RFM                  motor         7               
+// RBM                  motor         5               
 // LeftY                encoder       A, B            
 // RightY               encoder       G, H            
 // X                    encoder       E, F            
 // LBM                  motor         4               
-// DR4B                 motor_group   5, 7            
+// DR4B                 motor_group   11, 6           
 // Dummy                bumper        D               
 // ---- END VEXCODE CONFIGURED DEVICES ----
 

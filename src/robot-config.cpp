@@ -9,15 +9,15 @@ brain  Brain;
 
 // VEXcode device constructors
 controller Controller1 = controller(primary);
-motor LFM = motor(PORT1, ratio18_1, false);
-motor RFM = motor(PORT2, ratio18_1, true);
-motor RBM = motor(PORT3, ratio18_1, true);
+motor LFM = motor(PORT8, ratio18_1, true);
+motor RFM = motor(PORT7, ratio18_1, false);
+motor RBM = motor(PORT5, ratio18_1, true);
 encoder LeftY = encoder(Brain.ThreeWirePort.A);
 encoder RightY = encoder(Brain.ThreeWirePort.G);
 encoder X = encoder(Brain.ThreeWirePort.E);
-motor LBM = motor(PORT4, ratio18_1, false);
-motor DR4BMotorA = motor(PORT5, ratio36_1, false);
-motor DR4BMotorB = motor(PORT7, ratio36_1, true);
+motor LBM = motor(PORT4, ratio18_1, true);
+motor DR4BMotorA = motor(PORT11, ratio18_1, false);
+motor DR4BMotorB = motor(PORT6, ratio18_1, true);
 motor_group DR4B = motor_group(DR4BMotorA, DR4BMotorB);
 bumper Dummy = bumper(Brain.ThreeWirePort.D);
 
