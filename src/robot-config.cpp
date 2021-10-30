@@ -11,7 +11,7 @@ brain  Brain;
 controller Controller1 = controller(primary);
 motor LFM = motor(PORT8, ratio18_1, true);
 motor RFM = motor(PORT7, ratio18_1, false);
-motor RBM = motor(PORT5, ratio18_1, true);
+motor RBM = motor(PORT5, ratio18_1, false);
 encoder LeftY = encoder(Brain.ThreeWirePort.A);
 encoder RightY = encoder(Brain.ThreeWirePort.G);
 encoder X = encoder(Brain.ThreeWirePort.E);

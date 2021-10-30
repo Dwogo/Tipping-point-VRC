@@ -1,3 +1,45 @@
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// Controller1          controller                    
+// LFM                  motor         8               
+// RFM                  motor         7               
+// RBM                  motor         5               
+// LeftY                encoder       A, B            
+// RightY               encoder       G, H            
+// X                    encoder       E, F            
+// LBM                  motor         4               
+// DR4B                 motor_group   11, 6           
+// Dummy                bumper        D               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// Controller1          controller                    
+// LFM                  motor         8               
+// RFM                  motor         7               
+// RBM                  motor         5               
+// LeftY                encoder       A, B            
+// RightY               encoder       G, H            
+// X                    encoder       E, F            
+// LBM                  motor         4               
+// DR4B                 motor_group   11, 6           
+// Dummy                bumper        D               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// Controller1          controller                    
+// LFM                  motor         8               
+// RFM                  motor         7               
+// RBM                  motor         5               
+// LeftY                encoder       A, B            
+// RightY               encoder       G, H            
+// X                    encoder       E, F            
+// LBM                  motor         4               
+// DR4B                 motor_group   11, 6           
+// Dummy                bumper        D               
+// ---- END VEXCODE CONFIGURED DEVICES ----
 /*----------------------------------------------------------------------------*/
 /*                                                                            */
 /*    Module:       main.cpp                                                  */
@@ -134,13 +176,14 @@ int resetPos() {
   LeftY.resetRotation();
   RightY.resetRotation();
   X.resetRotation();
+  return 1;
 }
 
 
 void autonomous(void) {
   // Starting the engines
     vex::task drivePID(pird);
-    vex::task drivePID(resetPos);
+    vex::task resetpo(resetPos);
   // Autonomous commands
 
 
@@ -162,10 +205,11 @@ int rueben() {
   Controller1.Screen.print("Bye Bye");
   userControl = false;
   } else {
-  Controller1.Screen.print("No worries")
+  Controller1.Screen.print("No worries");
   }
   wait(5,sec);
-  userControl = true
+  userControl = true;
+  return 1;
 }
 
 void usercontrol(void) {
