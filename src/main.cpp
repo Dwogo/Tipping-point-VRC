@@ -1,45 +1,3 @@
-// ---- START VEXCODE CONFIGURED DEVICES ----
-// Robot Configuration:
-// [Name]               [Type]        [Port(s)]
-// Controller1          controller                    
-// LFM                  motor         8               
-// RFM                  motor         7               
-// RBM                  motor         5               
-// LeftY                encoder       A, B            
-// RightY               encoder       G, H            
-// X                    encoder       E, F            
-// LBM                  motor         4               
-// DR4B                 motor_group   11, 6           
-// Dummy                bumper        D               
-// ---- END VEXCODE CONFIGURED DEVICES ----
-// ---- START VEXCODE CONFIGURED DEVICES ----
-// Robot Configuration:
-// [Name]               [Type]        [Port(s)]
-// Controller1          controller                    
-// LFM                  motor         8               
-// RFM                  motor         7               
-// RBM                  motor         5               
-// LeftY                encoder       A, B            
-// RightY               encoder       G, H            
-// X                    encoder       E, F            
-// LBM                  motor         4               
-// DR4B                 motor_group   11, 6           
-// Dummy                bumper        D               
-// ---- END VEXCODE CONFIGURED DEVICES ----
-// ---- START VEXCODE CONFIGURED DEVICES ----
-// Robot Configuration:
-// [Name]               [Type]        [Port(s)]
-// Controller1          controller                    
-// LFM                  motor         8               
-// RFM                  motor         7               
-// RBM                  motor         5               
-// LeftY                encoder       A, B            
-// RightY               encoder       G, H            
-// X                    encoder       E, F            
-// LBM                  motor         4               
-// DR4B                 motor_group   11, 6           
-// Dummy                bumper        D               
-// ---- END VEXCODE CONFIGURED DEVICES ----
 /*----------------------------------------------------------------------------*/
 /*                                                                            */
 /*    Module:       main.cpp                                                  */
@@ -65,7 +23,6 @@
 // ---- END VEXCODE CONFIGURED DEVICES ----
 
 #include "vex.h"
-
 using namespace vex;
 
 // A global instance of competition
@@ -107,7 +64,7 @@ int pird() {
   // Position
     float yPos = (LeftY.position(degrees) + RightY.position(degrees))/2;
     float xPos = X.position(degrees);
-    float tspoon =  (LeftY.position(degrees) - RightY.position(degrees)/2);
+    float tspoon =  (LeftY.position(degrees) - RightY.position(degrees))/2;
 
   // PID system
     // y Position
